@@ -6,12 +6,18 @@
   }
   
   body {
+    background-image: url('https://wallpapers.com/images/high/street-light-dcqn1xxyblzu6wrc.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     padding: 20px;
     min-height: 100vh;
     align-items: center;
+    overflow: auto;
   }
   
   div {
@@ -24,29 +30,32 @@
   .product-card {
     background-color: #fff;
     border-radius: 10px;
-    width: 350px;
+    width: 300px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-direction: column;
   }
   
   .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
   }
-  
+
   .product-card img {
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-bottom: 1px solid #f1f1f1;
+    height: 350px;
+    /* object-fit: cover; */
+    transition: transform 0.5s ease;
   }
   
   .product-card .category {
     font-size: 14px;
     color: #888;
-    margin: 10px 0;
+    margin: 10px;
+    
   }
   
   .product-card h4 {
@@ -61,13 +70,20 @@
     font-weight: bold;
     margin-bottom: 20px;
   }
+
+  .product-card:hover img {
+  transform: scale(1.1);
+}
   
   .product-card .price::before {
     content: "$";
   }
   
-  .product-card .category, .product-card h4, .product-card .price {
+  .product-card .category, .product-card .price {
     padding: 0 10px;
   }
+  
+
+  
   
   
