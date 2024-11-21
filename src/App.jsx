@@ -2,7 +2,7 @@ import { ProductCard } from "./components/ProductCard";
 import { useState } from "react";
 import { useEffect } from "react";
 
-const defaultValue = [
+// const defaultValue = [
 //   {
 //     id: 0,
 //     name: "Satoru Gojo",
@@ -45,36 +45,38 @@ const defaultValue = [
 //     category: "One Piece",
 //     image: "https://motionbgs.com/media/218/zoro-from-one-piece.jpg"
 //   }
-]
+// ]
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState(defaultValue);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products')
-      .then(res=>res.json())
-      .then(json=>setProducts(json))
-      .finally(() => setLoading(false));
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((json) => {
+        setProducts(json);
+        setLoading(false);
+      })
+      .catch((error) => console.error("Error fetching products:", error));
   }, []);
 
   return (
-    <div>
-      {loading && <div><img src="https://i.pinimg.com/originals/d9/f2/15/d9f21515b1e38d83e94fdbce88f623b6.gif" alt="" /></div>}
-      {products.map((product) => (
-        <ProductCard data = {product}/>
-      ))}
-    </div>
-  )
-
-  return (
-    <div> 
-      { 
-      products.map((product) => (
-        <ProductCard data = {product}/>
-      )
-    )
-  }
+    <div className="app">
+      {loading ? (
+        <div className="loading">
+          <img
+            src="https://i.pinimg.com/originals/d9/f2/15/d9f21515b1e38d83e94fdbce88f623b6.gif"
+            alt="Loading..."
+          />
+        </div>
+      ) : (
+        <div className="product-list">
+          {products.map((product) => (
+            <ProductCard key={product.id} data={product} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

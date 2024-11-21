@@ -1,89 +1,109 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  body {
-    background-image: url('https://wallpapers.com/images/high/street-light-dcqn1xxyblzu6wrc.webp');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    overflow: hidden;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    min-height: 100vh;
-    align-items: center;
-    overflow: auto;
-  }
-  
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-  }
-  
-  .product-card {
-    background-color: #fff;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-direction: column;
-  }
-  
-  .product-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-    filter: brightness(1.1);
-  }
-
-  .product-card img {
-    width: 100%;
-    height: 350px;
-    /* object-fit: cover; */
-    transition: transform 0.5s ease;
-  }
-  
-  .product-card .category {
-    font-size: 14px;
-    color: #888;
-    margin: 10px;
-    
-  }
-  
-  .product-card h4 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .product-card .price {
-    font-size: 20px;
-    color: #e74c3c;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .product-card:hover img {
-  transform: scale(1.1);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
   
-  .product-card .price::before {
-    content: "$";
-  }
+body {
+  background-image: url('https://wallpapers.com/images/high/street-light-dcqn1xxyblzu6wrc.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  overflow: auto;
+}
   
-  .product-card .category, .product-card .price {
-    padding: 0 10px;
-  }
-  
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  
-  
-  
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 320px;
+  height: 500px;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: white;
+  margin: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;  
+}
+
+.product-card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+  filter: brightness(1.1);
+  border: #0056b3 solid 2px;
+}
+
+.product-image {
+  width: 100%;
+  height: 300px;
+  max-height: 270px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.category {
+  color: #3a7cff;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: left;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+}
+
+.add-to-cart-btn {
+  background-color: #3a7cff;
+  color: white;
+  width: 140px;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2d61c9;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .product-card {
+    width: 90%;
+  }
+}
